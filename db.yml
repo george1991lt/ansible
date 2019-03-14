@@ -1,4 +1,4 @@
-- hosts: dbservers
+- hosts: all
   become: yes
   tasks:
    - name: install MariaDB server
