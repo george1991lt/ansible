@@ -1,5 +1,5 @@
-—-
-- hosts: webservers
+
+hosts: webservers
  become: yes
  tasks:
    - name: install Apache server
@@ -25,6 +25,7 @@
        name: web
        state: present
 
+
    - name: set content directory group/permissions 
      file:
        path: /var/www/html
@@ -41,7 +42,7 @@
        group: web
        mode: u=rw,g=rw,o=r
 
-- hosts: dbservers
+hosts: dbservers
  become: yes
  tasks:
    - name: install MariaDB server
@@ -55,7 +56,7 @@
        enabled: yes
        state: started
 
-- hosts: logservers
+hosts: logservers
  become: yes
  tasks:
    - name: configure rsyslog remote log reception over udp
@@ -82,7 +83,7 @@
        name: rsyslog
        state: restarted
 
-- hosts: lamp
+hosts: lamp
  become: yes
  tasks:
    - name: configure rsyslog
