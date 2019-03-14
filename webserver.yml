@@ -1,6 +1,6 @@
 
 hosts: webservers
- become: yes
+ #become: yes
  tasks:
    - name: install Apache server
      yum:
