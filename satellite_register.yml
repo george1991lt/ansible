@@ -1,8 +1,11 @@
 - hosts: all
   become: yes
   tasks:
-  - name: Reboot the server and wait for it to come back up.
+  - name: Download cert
     command: curl --insecure --output katello-ca-consumer-latest.noarch.rpm https://satellite.zecorhelsr01.zebrac.local/pub/katello-ca-consumer-latest.noarch.rpm
+  - name: Install cert
     command: yum localinstall katello-ca-consumer-latest.noarch.rpm -y
+  - name: Register machine
     command: subscription-manager register --org="Zebra_Consultants_LTD" --activationkey="Zebra_Consultants_Servers" --auto-attach
+  - name: Install agent
     command: yum -y install katello-agent
