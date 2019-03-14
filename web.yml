@@ -1,6 +1,6 @@
 hosts: webservers
- become: yes
- tasks:
+become: yes
+tasks:
    - name: install Apache server
      yum:
        name: httpd
