@@ -2,7 +2,7 @@
   become: yes
   tasks:
   - name: Reboot the server and wait for it to come back up.
-    shell: curl --insecure --output katello-ca-consumer-latest.noarch.rpm https://satellite.zecorhelsr01.zebrac.local/pub/katello-ca-consumer-latest.noarch.rpm
-    shell: yum localinstall katello-ca-consumer-latest.noarch.rpm -y
-    shell: subscription-manager register --org="Zebra_Consultants_LTD" --activationkey="Zebra_Consultants_Servers" --auto-attach
-    shell: yum -y install katello-agent
+    command: curl --insecure --output katello-ca-consumer-latest.noarch.rpm https://satellite.zecorhelsr01.zebrac.local/pub/katello-ca-consumer-latest.noarch.rpm
+    command: yum localinstall katello-ca-consumer-latest.noarch.rpm -y
+    command: subscription-manager register --org="Zebra_Consultants_LTD" --activationkey="Zebra_Consultants_Servers" --auto-attach
+    command: yum -y install katello-agent
