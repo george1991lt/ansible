@@ -4,4 +4,4 @@
   - name: Update packages
     command: yum update -y
   - name: Reboot in 5 minutes
-    command: reboot | at now +5 minutes
+    command: echo "reboot" | at -m now +5 minute
