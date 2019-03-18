@@ -1,0 +1,15 @@
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install appache
+    command: yum install httpd -y
+  - name: Enable service
+    command: systemctl enable httpd
+  - name: Start service
+    command: systemctl start httpd
+  - name: Open port
+    command: firewall-cmd --zone=public --add-port=80/tcp
+  - name: Enable port
+    command: firewall-cmd --zone=public --add-port=80/tcp --permanent
+  - name: Reload firewall
+    command: firewall-cmd --reload  
