@@ -1,0 +1,5 @@
+- hosts: all
+  become: yes
+  tasks:
+  - name: Title 1
+    command: echo "Hostname of this machine is:" >> maintenance_test.txt
