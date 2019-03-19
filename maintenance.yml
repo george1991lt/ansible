@@ -181,3 +181,41 @@
     shell: echo "Unique latest system logins:" >> maintenance_test1.txt
   - name: Latest system logins unique
     shell: last > /tmp/tt && cut -c 23-38 /tmp/tt | sort | uniq >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 27
+    shell: echo "Monitor /var/log/secure files:" >> maintenance_test1.txt
+  - name: Monitor secure files
+    shell: cat /var/log/secure-* >> maintenance_test1.txt && cat /var/log/secure >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 28
+    shell: echo "Monitor kernel messages /var/log/dmesg file:" >> maintenance_test1.txt
+  - name: Monitor kernel messages
+    shell: cat /var/log/dmesg >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 29
+    shell: echo "Monitor kernel messages after boot:" >> maintenance_test1.txt
+  - name: Monitor kernel after boot
+    shell: dmesg >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 30
+    shell: echo "Monitor kernel messages after boot:" >> maintenance_test1.txt
+  - name: Monitor kernel after boot
+    shell: dmesg >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 31
+    shell: echo "Look for system messages /var/log/messages files:" >> maintenance_test1.txt
+  - name: Monitor System messages
+    shell: cat /var/log/messages >> maintenance_test1.txt && cat /var/log/messages-* >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Credits
+    shell: echo "===============" >> maintenance_test1.txt
+  - name: Credits2
+    shell: echo "= END OF FILE =" >> maintenance_test1.txt
+  - name: Credits3
+    shell: echo "===============" >> maintenance_test1.txt   
