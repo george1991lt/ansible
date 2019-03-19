@@ -35,3 +35,21 @@
     shell: cat /etc/sysconfig/network-scripts/ifcfg-ens* >> maintenance_test1.txt
   - name: Continue
     shell: netstat -r >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 6
+    shell: echo "The /etc/hosts file is as follows:" >> maintenance_test1.txt
+  - name: Hosts
+    shell: cat /etc/hosts >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 7
+    shell: echo "The DNS servers are as follows:" >> maintenance_test1.txt
+  - name: DNS
+    shell: cat /etc/resolv.conf >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 8
+    shell: echo "The iomem of this machine is as follows:" >> maintenance_test1.txt
+  - name: IOMEM
+    shell: cat /proc/iomem >> maintenance_test1.txt
