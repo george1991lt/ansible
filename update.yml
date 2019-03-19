@@ -4,4 +4,4 @@
   - name: Update packages
     command: yum update -y
   - name: Rebooting
-    command: reboot
+    shell: echo "reboot" | at -m now +1 minute
