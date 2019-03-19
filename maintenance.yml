@@ -97,3 +97,21 @@
     shell: sleep 10
   - name: continue
     shell: iostat -c -t >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 13
+    shell: echo "Physical Partitions Created:" >> maintenance_test1.txt
+  - name: Physical Partitions
+    shell: fdisk -l >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 14
+    shell: echo "Hard Drives utilization:" >> maintenance_test1.txt
+  - name: Hard Drives Utilization
+    shell: df -h >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 15
+    shell: echo "Review Physical Volumes, Volume Groups and Logical Volumes:" >> maintenance_test1.txt
+  - name: Physical Volumes, Volume Groups and Logical Volumes
+    shell: pvdisplay && vgdisplay && lvdisplay >> maintenance_test1.txt
