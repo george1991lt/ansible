@@ -114,4 +114,4 @@
   - name: Title 15
     shell: echo "Review Physical Volumes, Volume Groups and Logical Volumes:" >> maintenance_test1.txt
   - name: Physical Volumes, Volume Groups and Logical Volumes
-    shell: pvdisplay && vgdisplay && lvdisplay >> maintenance_test1.txt
+    shell: pvdisplay >> maintenance_test1.txt && vgdisplay >> maintenance_test1.txt && lvdisplay >> maintenance_test1.txt
