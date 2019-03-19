@@ -76,8 +76,6 @@
   - name: Title 12
     shell: echo "The CPU utilization of this machine is:" >> maintenance_test1.txt
   - name: CPU Utilization
-    shell: sar >> maintenance_test1.txt
-  - name: continue
     shell: iostat -c -t >> maintenance_test1.txt
   - name: sleep
     shell: sleep 10
