@@ -119,5 +119,65 @@
     shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
   - name: Title 16
     shell: echo "The i/o of h/d is as follows:" >> maintenance_test1.txt
-  - name: Physical Volumes, Volume Groups and Logical Volumes
+  - name: I/O of H/D
     shell: iostat -d -k -t >> maintenance_test1.txt && sleep 10 && iostat -d -k -t >> maintenance_test1.txt && sleep 10 && iostat -d -k -t >> maintenance_test1.txt && sleep 10 && iostat -d -k -t >> maintenance_test1.txt && sleep 10 && iostat -d -k -t >> maintenance_test1.txt && sleep 10 && iostat -d -k -t >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 17
+    shell: echo "Memory utilization:" >> maintenance_test1.txt
+  - name: Memory utilization
+    shell: cat /proc/meminfo >> maintenance_test1.txt && free >> maintenance_test1.txt && vmstat >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 18
+    shell: echo "Network ports monitoring for localhost:" >> maintenance_test1.txt
+  - name: Network ports
+    shell: nmap localhost >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 19
+    shell: echo "Network ports monitoring for $HOSTNAME:" >> maintenance_test1.txt
+  - name: Network ports HOSTNAME
+    shell: nmap $HOSTNAME >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 20
+    shell: echo "Monitor ports and services LISTENING:" >> maintenance_test1.txt
+  - name: Ports and services
+    shell: netstat -ntaupe >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 21
+    shell: echo "Monitor system services runlevel status:" >> maintenance_test1.txt
+  - name: System Services
+    shell: chkconfig --list >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 22
+    shell: echo "Monitor system services current status:" >> maintenance_test1.txt
+  - name: System Services current status
+    shell: service --status-all >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 23
+    shell: echo "Local system users are as follows:" >> maintenance_test1.txt
+  - name: Local system users
+    shell: cat /etc/passwd >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 24
+    shell: echo "Local system groups are as follows:" >> maintenance_test1.txt
+  - name: Local system groups
+    shell: cat /etc/group >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 25
+    shell: echo "Find latest system logins:" >> maintenance_test1.txt
+  - name: Latest system logins
+    shell: last >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 26
+    shell: echo "Unique latest system logins:" >> maintenance_test1.txt
+  - name: Latest system logins unique
+    shell: last > /tmp/tt && cut -c 23-38 /tmp/tt | sort | uniq >> maintenance_test1.txt
