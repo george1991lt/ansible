@@ -53,3 +53,49 @@
     shell: echo "The iomem of this machine is as follows:" >> maintenance_test1.txt
   - name: IOMEM
     shell: cat /proc/iomem >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 9
+    shell: echo "The ioports of this machine is as follows:" >> maintenance_test1.txt
+  - name: IOPORTS
+    shell: cat /proc/ioports >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 10
+    shell: echo "The Interrupts of this machine are as follows:" >> maintenance_test1.txt
+  - name: INTERRUPTS
+    shell: cat /proc/interrupts >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 11
+    shell: echo "The number of CPUs together with the CPU family of this machine are:" >> maintenance_test1.txt
+  - name: CPU
+    shell: cat /proc/cpuinfo >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 12
+    shell: echo "The CPU utilization of this machine is:" >> maintenance_test1.txt
+  - name: CPU Utilization
+    shell: sar >> maintenance_test1.txt
+  - name: continue
+    shell: iostat -c -t >> maintenance_test1.txt
+  - name: sleep
+    shell: sleep 10
+  - name: continue
+    shell: iostat -c -t >> maintenance_test1.txt
+  - name: sleep
+    shell: sleep 10
+  - name: continue
+    shell: iostat -c -t >> maintenance_test1.txt
+  - name: sleep
+    shell: sleep 10
+  - name: continue
+    shell: iostat -c -t >> maintenance_test1.txt
+  - name: sleep
+    shell: sleep 10
+  - name: continue
+    shell: iostat -c -t >> maintenance_test1.txt
+  - name: sleep
+    shell: sleep 10
+  - name: continue
+    shell: iostat -c -t >> maintenance_test1.txt
