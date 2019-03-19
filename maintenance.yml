@@ -32,6 +32,6 @@
   - name: Continue
     shell: cat /etc/sysconfig/network >> maintenance_test1.txt
   - name: Continue
-    shell: cat /etc/sysconfig/network-scripts/ifcfg-eth* >> maintenance_test1.txt
+    shell: cat /etc/sysconfig/network-scripts/ifcfg-ens* >> maintenance_test1.txt
   - name: Continue
     shell: netstat -r >> maintenance_test1.txt
