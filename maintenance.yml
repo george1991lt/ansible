@@ -4,4 +4,16 @@
   - name: Title 1
     shell: echo "Hostname of this machine is:" >> maintenance_test1.txt
   - name: Hostname
-    shell: echo $HOSTNAME >> maintenance_test1.txt  
+    shell: echo $HOSTNAME >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 2
+    shell: echo "The Red Hat Release as follows:" >> maintenance_test1.txt
+  - name: Red Hat version
+    shell: cat /etc/redhat-release >> maintenance_test1.txt
+  - name: Line Break
+    shell: echo "--------------------------------------------------------------------------------" >> maintenance_test1.txt
+  - name: Title 3
+    shell: echo "The machine kernel is as follows:" >> maintenance_test1.txt
+  - name: Machine Kernel
+    shell: uname -a >> maintenance_test1.txt
