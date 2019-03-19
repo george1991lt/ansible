@@ -2,4 +2,6 @@
   become: yes
   tasks:
   - name: Title 1
-    shell: echo "Hostname of this machine is:" >> maintenance_test.txt
+    shell: echo "Hostname of this machine is:" >> maintenance_test1.txt
+  - name: Hostname
+    shell: echo $HOSTNAME >> maintenance_test1.txt  
