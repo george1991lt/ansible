@@ -1,0 +1,31 @@
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install httpd
+    shell: yum install httpd -y
+  - name: Start service
+    shell: systemctl start httpd
+  - name: Enable service
+    shell: systemctl enable httpd
+  - name: Open HTTP Port
+    shell: firewall-cmd --add-port=80/tcp
+  - name: Open Ports Permanent
+    shell: firewall-cmd --add-port=80/tcp --permanent
+  - name: Open HTTPS Port
+    shell: firewall-cmd --add-port=443/tcp
+  - name: Open Port Permanent
+    shell: firewall-cmd --add-port=443/tcp --permanent
+  - name: Reload Firewall
+    shell: firewall-cmd --reload
+  - name: Install Mariadb
+    shell: yum install mariadb-server mariadb -y
+  - name: Start Mariadb
+    shell: systemctl start mariadb
+  - name: Enable Mariadb
+    shell: systemctl enable mariadb
+  - name: Install PHP
+    shell: yum install php php-mysql -y
+  - name: Restart Apache
+    shell: systemctl restart httpd
+  - name: Test PHP Processing
+    shell: echo "<?php phpinfo(); ?>" >> /var/www/html/info.php
