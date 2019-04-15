@@ -9,4 +9,3 @@
     shell: echo "The machine filesystem is as follows:" >> maintenance_test1.txt
   - name: Machine Kernel
     shell: df -h >> maintenance_test1.txt
-	
